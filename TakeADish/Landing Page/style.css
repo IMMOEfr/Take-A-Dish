@@ -1,0 +1,149 @@
+@keyframes slideInLeft { /*animation for click anywhere text*/
+    from{
+        transform: translateX(-500px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes float{
+    from{
+        transform: translateY(4px)
+    }
+    to{
+        transform: translateY(0px);
+    }
+  }
+h2{
+    left: 100%;
+    bottom: 40%;
+    align-self: center;
+    font-family:'Courier New', Courier, monospace;
+    font-weight:bold;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    padding-top:70%;
+    animation: fadeIn 3s;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+.junk-food{
+    z-index: 0;
+    width: 70px;
+    height: 60px; 
+    position:absolute;
+    right:62.5%;
+    top: 46%;
+    animation: fadeIn 5s;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+
+.cake{
+    width: 70px;
+    height: 60px;
+    position:absolute;
+    top: 46.5%;
+    left: 63%;
+    z-index: 0;
+    animation: fadeIn 5s;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+
+}
+
+.heading-1{ /*code for click anywhere text*/
+
+    right: 41.5%;
+    bottom: 36%;
+    position: absolute;
+    animation: fadeIn 3s;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 19px;
+}
+
+.fakebtn{
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    height: 97%;
+    width: 100%;
+    right:0.5%; 
+    cursor: pointer;
+    background-color:transparent;
+    border: transparent;
+}
+.btn{ /*code for styling button Take A Dish*/
+
+    left: 40.1%;
+    bottom: 40%;
+    position: absolute;
+    background: transparent;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0.5em 0.5em;
+    color: rgb(255, 255, 255);
+    background-color: rgb(155, 6, 6);
+    border: 5px solid red;
+    border-radius: 5px;
+    border-color: red;
+    align-self: center; 
+}
+.menu.html{ /*code for styling button Take A Dish*/
+
+    left: 40.1%;
+    bottom: 40%;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    background: transparent;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0.5em 0.5em;
+    color: rgb(255, 255, 255);
+    background-color: rgb(155, 6, 6);
+    border: 5px solid red;
+    border-radius: 5px;
+    border-color: red;
+    align-self: center;
+}   
+body{
+    width: 99%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background: linear-gradient(to right, rgb(253, 134, 78), rgb(255, 85, 85), rgb(247, 113, 60));
+}
+.person-icon:hover{ 
+    transform: scale(1.1);
+}   
+.content {
+    z-index: 1;
+    max-width: 500px;
+    margin: auto;
+}
