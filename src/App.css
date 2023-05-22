@@ -1,0 +1,434 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+*{
+  font-family: 'Poppins', sans-serif;
+}
+html, body {
+  margin: 0%;
+}
+body{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  /* background: #ff5555; */
+  background: linear-gradient(to right, rgb(253, 134, 78), rgb(255, 85, 85), rgb(247, 113, 60));
+}
+/*ANIMATIONS*/
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes app-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes slideInTop { /*animation for click anywhere text*/
+  from{
+      transform: translateY(500px);
+  }
+  to{
+      transform: translateX(0px);
+  }
+}
+/*LOADING*/
+.take-a-dish-logo {
+  position: fixed;
+  height:20%;
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* THIS is for the puffloader thingy (centering) and the background */
+.Logo-Screen{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ce5f5fff;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: "100%";
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*NAVBAR*/
+.navbar {
+  z-index: 1000;
+  /* background: #368f4300; */
+  background: linear-gradient(to bottom,rgb(255, 85, 85), rgb(233, 70, 70), rgb(206, 51, 51));
+  -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+  display: flex;
+  padding: 0.5rem;
+}
+.navText{
+  font-size: 1rem;
+  margin: 0 1rem;
+  padding-top: 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.navText:hover{
+  cursor:pointer;
+  color:#130f40;
+}
+.admin-panel{
+  height: 45px;
+  width: 50px;
+  margin-left: auto;
+}
+.admin-panel:hover{
+  cursor: pointer;
+  opacity: 0.7;
+}
+/*LANDING-PAGE*/
+.content{
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+  
+.login{
+  display: flex;
+  justify-content: flex-end;
+}
+.loginIcon{
+  height: 50px;
+  width: 50px;
+  float: right;
+}
+.loginIcon:hover{
+  opacity: 0.5;
+  cursor: pointer;
+}
+.landingTitle{
+  font-size: 80px;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  animation: fadeIn 3s;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+.logo{
+  /* animation: app-logo-spin 1s; */
+  animation: fadeIn 2s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 320px;
+  width: 440px;
+}
+.hiddenBtn{
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  margin-right: 38px;
+  height: 95%;
+  width: 100%;
+  right:0.5%; 
+  cursor: pointer;
+  background-color:transparent;
+  border: transparent;   
+}
+.clickAnywhere{
+  animation: fadeIn 3s;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  font-size: 28px;
+  letter-spacing: 0.1rem;
+ /* color: white; */
+  color: transparent;
+  background: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+  
+}
+
+/*MENU PAGE*/
+.edit-button{
+  background: linear-gradient(to bottom,rgb(255, 85, 85), rgb(233, 70, 70), rgb(206, 51, 51));
+  color: white;
+  border: none;
+  padding: 5px;
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+  box-shadow: 0 2px 4px darkslategray;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display:flex;
+  justify-content: flex-end;
+}
+.edit-button:hover {
+  background-color: #ff2e38;
+ }
+ .edit-button:active {
+  box-shadow: 0 0 2px darkslategray;
+  transform: translateY(2px);
+ }
+.table-button{
+  width: 140px;
+  height: 80px; 
+  position:fixed;
+  right:1.5%;
+  top: 80%;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.473));
+  cursor:pointer;
+  clip-path: circle(40%);
+}
+.table-button:hover{
+  opacity: 0.7;
+}
+.cart{
+  width: 80px;
+  height: 80px; 
+  position:fixed;
+  right:1.5%;
+  top: 80%;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.473));
+  cursor:pointer;
+}
+.cart:hover{
+  opacity: 1;
+	-webkit-animation: flash 0.5s;
+	animation: flash 0.5s;
+}
+.quantity{
+  border-color: rgba(0, 0, 0, 0);
+  background-color: rgb(233, 70, 70);
+  color: white;
+  /* background-color: #f7f8a2; */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.quantitybtn{
+    border-color: rgba(255, 3, 3, 0);
+    background-color: rgb(190, 46, 46);
+    color: white;
+    /* background-color: #eaed70; */
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.quantitybtn:hover{
+  background-color: rgb(121, 26, 26);
+}
+.quantity-text{
+  margin-top: 0;
+}
+.menu-img{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.box-container{
+  vertical-align: middle;
+  display: inline-block;
+  grid-template-columns: 3;
+  gap: 1.5rem;
+}
+.box-container .item-container{
+  font-size: 0.8rem;
+  width: 200px;
+  height: 305px;
+  color: #130f40;
+  display: inline-grid;
+  border-radius: .5rem;
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+  margin: .5rem;
+  /* background: rgba(250, 252, 252, 0.5); */
+  background: #ffffff;
+}
+.content{
+  text-transform: uppercase;
+  padding-bottom: 0;
+  gap:0;
+  margin-bottom: 0;
+}
+
+/*SIDEBAR*/
+.box {
+  background: #f7f7f710;
+  display: flex;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+.sideImg{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+.sideImg:hover{
+  background: rgb(233, 70, 70);
+}
+
+/*ITEM FORM*/
+.form-title{
+  color: black;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: 30px;
+}
+.form{
+  position: fixed;
+  overflow: hidden;
+  background-color: rgb(224, 224, 224);
+  height: 70%;
+  width: 40%;
+  padding-left: 30px;
+  border-radius: 50px;
+  padding-bottom: 100px;
+  padding-top: 3px;
+  padding-right: 30px;
+  top: 12%;
+  left: 30%;
+  margin:auto;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.473));
+  animation: slideInTop 0.5s;
+}
+.input{
+  width: 450px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+/*CART PAGE*/
+.payment-summary {
+  background-color: white;
+  position: fixed;
+  right: 150px;
+  top: 150px;
+  bottom: 150px;
+  border-radius: 50px;
+}
+.cart-details{
+
+  background-color: white;
+  padding-left: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* right: 5px; */
+  border-radius: 20px;
+  display: inline-block;
+  justify-content: center;
+}
+.cart-details{
+  display: inline-block;
+}
+/*MODAL MENU*/
+.modal-container{
+  font-size: 1rem;
+  width: 80px;
+  height: 100px;
+  color: #130f40;
+  display: inline-grid;
+  border-radius: .5rem;
+  position: relative;
+  text-align: center;
+  margin: .5rem;
+  background: rgba(0, 0, 0, 0.521);
+}
+.modal-container:hover{
+  background: rgba(0, 0, 0, 0.76);
+}
+.modal-img{
+  width: 80px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.side-container{
+  background: #f7f7f710;
+  display: flex;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.side-container:hover{
+  background: rgb(233, 70, 70);
+}
+.side-modal{
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+}
+/*TABLE MANAGER*/
+.box-container .table-container{
+    font-size: 1rem;
+    width: auto;
+    height: auto;
+    color: #130f40;
+    display: inline-grid;
+    border-radius: .5rem;
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+    margin: .5rem;
+    background: rgba(250, 252, 252, 0.5);
+    
+  }
+  .box-container .table-container:hover{
+    background: rgba(250, 252, 252, 0.288);
+  }
+  .add-table{
+    width: auto;
+    height: auto;
+    border-style: dashed;
+    background: rgba(250, 252, 252, 0.5);
+  }
+  .add-table:hover{
+    background: rgba(250, 252, 252, 0.288);
+  }
