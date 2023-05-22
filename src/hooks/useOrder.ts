@@ -1,47 +1,96 @@
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { TableData } from "../pages/user/cart";
-import { menuRef, placedOrderRef, tableRef } from "../config/firebase";
+import { menuRef, placedOrderRef, queueRef, tableRef, billsRef } from "../config/firebase";
 import { FoodItem } from "./useMenu";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { STATUSROUTE } from "../lib/routes";
 
-
-// interface FoodObj {
-//     foodObj: FoodItem;
-//     quantity: number;
-// };
-
-// interface PlacedOrder {
-//     tableID: string;
-//     orders: FoodObj[];
-// };
-interface CartItems{
-    tableID: string;
-    foodName: string;
-    price: number;
-    category: string;
-    imageURL: string;
-    isAvailable: boolean;
-    id: string;
+interface FoodObj {
+    foodObj: FoodItem;
     quantity: number;
-}
-interface PlacedOrder{
-    orders: CartItems[];
-}
+    rank: number;
+};
+
+interface PlacedOrder {
+    tableID: string;
+    orders: FoodObj[];
+    nextRank: number;
+};
+
+interface Queue {
+    customerQueue: string[];
+};
+
 export const useOrder = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const placeOrder = async (orderIn: TableData) => {
+    const navigate = useNavigate();
+    const placeOrder = async (orderIn: TableData, totalPrice: number) => {
         try {
-            setIsLoading(true)
+            setIsLoading(true);
+            // Grabbing the Table ID
             const tableID = localStorage.getItem('userID');
             if(!tableID) throw new Error('No Table Id...');
 
-            //getting table document
-            const orderDoc = doc(tableRef, tableID);
-            const orderDocRef = await getDoc(orderDoc);
-            const orderSnap = orderDocRef.data() as PlacedOrder;    
-            console.log(orderSnap.orders);  
-            orderSnap.orders.map(async (order) => {
-                const foodDoc = doc(menuRef, order.id);
+            /*
+            *    Step 1:
+            *        Check if the Table already has a Placed Order.
+            *        If They don't, lets create a new instance of the document.
+            *        Otherwise, let's just proceed.
+            */
+            const newPlacedOrderDoc = doc(placedOrderRef, tableID);
+            const newPlacedOrderSnap = await getDoc(newPlacedOrderDoc);
+            if(!newPlacedOrderSnap.exists()) {
+                await setDoc(newPlacedOrderDoc, {
+                    id: tableID,
+                    orders: [],
+                    nextRank: 1,
+                });
+            };
+
+            /*
+            *   Step 2:
+            *       For every Food Item that exists in 'orderIn', we will now o ahead
+            *       and push that into the created placedOrders collection array.
+            */
+            const newPlacedOrderDocBuffer = doc(placedOrderRef, tableID);
+            const newPlacedOrderSnapBuffer = await getDoc(newPlacedOrderDocBuffer);
+            const newPlacedOrderDataBuffer = newPlacedOrderSnapBuffer.data() as PlacedOrder;
+            let newPlacedOrdersArr: FoodObj[] = newPlacedOrderDataBuffer.orders;
+            let sum = 0;
+            orderIn.orders.map(async(order) => {
+                const FoodItem = {
+                    category: order.foodObj.category,
+                    foodName: order.foodObj.foodName,
+                    id: order.foodObj.id,
+                    imageURL: order.foodObj.imageURL,
+                    isAvailable: order.foodObj.isAvailable,
+                    price: order.foodObj.price,
+                };
+                const FoodItemObject = {
+                    foodObj: FoodItem,
+                    quantity: order.quantity,
+                    rank: newPlacedOrderDataBuffer.nextRank,
+                } as FoodObj;
+                newPlacedOrdersArr.push(FoodItemObject);
+                sum += order.quantity * order.foodObj.price;
+            });
+            await updateDoc(newPlacedOrderDoc, {            
+                orders: newPlacedOrdersArr,
+                nextRank: newPlacedOrderDataBuffer.nextRank + 1,
+            });
+
+            /*
+            *   Step 3:
+            *       We need to update each Food Item's Consumer Array. (removing the table)
+            *       We need to remove the item the item
+            *       Finally, we set the table to true
+            */
+            const tableOrdersDoc = doc(tableRef, tableID); // TableRef Orders
+            const tableOrdersRef = await getDoc(tableOrdersDoc);
+            const tableOrdersData = tableOrdersRef.data() as PlacedOrder;
+            tableOrdersData.orders.map(async (order) => {
+                const foodDoc = doc(menuRef, order.foodObj.id);
                 const foodDocRef = await getDoc(foodDoc);
                 const foodSnap = foodDocRef.data() as FoodItem;
                 const newConsumers = foodSnap.consumers.filter((consumer) => {
@@ -50,115 +99,47 @@ export const useOrder = () => {
                 await updateDoc(foodDoc, {
                     consumers: newConsumers
                 });
-                //getting order document with table id
-                alert("passed");
-                const newPlacedOrderDocument = doc(placedOrderRef, tableID);
-                alert("passed");
-                console.log(newPlacedOrderDocument);
-
-                const newPlacedOrderSnapshot = await getDoc(newPlacedOrderDocument); 
-
-                //updating order doc if there exists a previous order
-                // if(newPlacedOrderSnapshot.data.length > 0){
-                //     console.log("updating");
-                //     const newPlacedOrders = [orderSnap.orders];
-                //     await updateDoc(newPlacedOrderDocument, {
-                //     orders: newPlacedOrders,
-                // })
-                // }
-                //creating new doc for orders of that table id
-                // else{
-                    console.log("creating");
-                    console.log("storing order: ", orderSnap.orders);
-                    const newCart: CartItems = {
-                        tableID: order.tableID,
-                        foodName: order.foodName,
-                        price: order.price,
-                        category: order.category,
-                        imageURL: order.imageURL,
-                        isAvailable: order.isAvailable,
-                        id: order.id,
-                        quantity: order.quantity,
-                    } 
-                    const newPlacedOrderArr = newCart as unknown as CartItems[];
-                    console.log("Inserting to order field: ", newPlacedOrderArr);
-                    const newPlacedOrders: PlacedOrder = {
-                        orders: newPlacedOrderArr,
-                    }
-                    
-                
-                   
-
-
-                    // console.log(map);
-
-                    // console.log(newPlacedOrders);
-                    await setDoc(newPlacedOrderDocument, newPlacedOrders);
-                // }
-                
-                // const placedOrderBuffer = {
-                //     category: foodSnap.category,
-                //     foodName: foodSnap.foodName,
-                //     id: foodSnap.id,
-                //     imageURL: foodSnap.imageURL,
-                //     isAvailable: foodSnap.isAvailable,
-                //     price: foodSnap.price
-                // };
-
-                // const lastBufferIswear = {
-                //     foodObj: placedOrderBuffer,
-                //     quantity: order.quantity,
-                // };
-                // console.log('---------------------------------------')
-                // console.log('lastBuffer:')
-                // console.log(lastBufferIswear);
-                // console.log('---------------------------------------')
-                // const newPlacedOrderDocument = doc(placedOrderRef, tableID);
-                // const newPlacedOrderSnapshot = await getDoc(newPlacedOrderDocument); 
-                // const placedOrderData = newPlacedOrderSnapshot.data() as PlacedOrder;
-                // let newPlacedOrderArr: FoodObj[];
-                // if(placedOrderData) {
-                //     console.log("Here");
-                //     newPlacedOrderArr = [lastBufferIswear, ...placedOrderData.orders] as unknown as FoodObj[];
-                //     await updateDoc(newPlacedOrderDocument, {
-                //         orders: newPlacedOrderArr,
-                //     });
-                // } else {
-                //     console.log("Adding");
-                //     newPlacedOrderArr = [lastBufferIswear] as unknown as FoodObj[];
-                //     await setDoc(newPlacedOrderDocument, {
-                //         id: tableID,
-                //         orders: newPlacedOrderArr,
-                //     });
-                // }
-                // console.log('---------------------------------------')
-                // console.log('newPlacedOrderArr:')
-                // console.log(newPlacedOrderArr);
-                // console.log('---------------------------------------')
-                // // const newPlacedOrderArr = [orderSnap.orders, ...placedOrderData.orders];
-                // // if(newPlacedOrderSnapshot.exists()) { // Exists, we need to update
-                // //     console.log('UPDATING')
-                // //     await updateDoc(newPlacedOrderDocument, {
-                // //         orders: newPlacedOrderArr,
-                // //     });
-                // // } else { // It doesnt exist, lets add it 
-                //     // console.log('ADDING');
-                //     // await setDoc(newPlacedOrderDocument, {
-                //     //     id: tableID,
-                //     //     orders: newPlacedOrderArr,
-                //     // });
-                // // }
             });
-            // await updateDoc(orderDoc, {
-            //     orders: [],
-            //     isActive: true,
-            // }); 
+            /*
+            *   Step 6:
+            *       Create a nw instance of a document for the Bills, so we have access
+            *       to the orderID. Then we update the table's orderID so we can link them
+            *       together
+            */
+            const billsDocRef = doc(billsRef);
+            await setDoc(billsDocRef, {
+                orderID: billsDocRef.id,
+                progressArr: [false, false, false, false, false],
+            }) 
+            await updateDoc(tableOrdersDoc, {
+                orders: [],
+                isActive: true,
+                orderID: billsDocRef.id,
+            });
+            /*
+            *   STEP 4:
+            *        Push the TableID into the Queue.
+            */
+            const queueDocRef = doc(queueRef, 'V5D5zklsIJ6166Y862mz');
+            const queueDocSnap = await getDoc(queueDocRef);
+            const queueData = queueDocSnap.data() as Queue;
+            const newCostumerQueue = queueData.customerQueue;
+            newCostumerQueue.push(tableID);
+            await updateDoc(queueDocRef, {
+                customerQueue: newCostumerQueue
+            });
+            /*
+            *   STEP 5:
+            *        PUSH TO LOCAL STORAGE
+            */
+            localStorage.setItem('orderTotalPrice', `${sum}`);
+            localStorage.setItem('orderID', `${billsDocRef.id}`);
         } catch(error: unknown) {
             if(error instanceof Error) console.log(error.message);
         } finally {
             setIsLoading(false);
+            navigate(STATUSROUTE);
         }
     };
-    return { placeOrder }
+    return { placeOrder, isLoading };
 };
-
