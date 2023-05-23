@@ -1,0 +1,70 @@
+
+/*check mark*/
+.progress-step::before{
+  counter-increment: step;
+  content: '\2714';
+  /* color: var(--base); */
+  color:aliceblue;
+  z-index: 1;
+}
+.progressbar{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+}
+
+/*line/bar*/
+.progressbar::before, .progress{
+  content: " ";
+  position: absolute;
+  top: 58%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 95%;
+  background-color: #dcdcdc;
+  left: 3%;
+}
+
+/*line/bar*/
+.progress{
+  background-color: #01bd0a;
+  position: absolute;
+  left: 8px;  
+  /* width: 0%;   */
+  max-width: 95%;
+}
+
+/*circle*/
+.progress-step{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+/*icon*/
+.progress-step .icon{
+  position: absolute;
+  top: calc(100% + 00.10rem); /* In chareg of tht Calculatioin fo rth progress icons */
+  width: auto;
+  height: auto;
+}
+/*check marks*/
+.progress-step::after{
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 4rem);
+  color: var(--font);
+  font-weight: 4px;
+}
+
+/*circle color*/
+.progress-step-active{
+  background-color: #01bd0a;
+}
