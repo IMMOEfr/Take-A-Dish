@@ -1,5 +1,5 @@
 # Take-A-Dish | BETA
 
 
-
-BETA DEPLOYMENT SERVER: https://take-a-dish-b702e.web.app
+Create React App
+TAKE A DISH BETA DEPLOYMENT: https://take-a-dish-b702e.web.app  
