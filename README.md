@@ -36,7 +36,6 @@ Take-A-Dish is a restaurant ordering system web application designed for restaur
 The following dependencies are required for the Take-A-Dish application:
 
     # bash
-        npm install react-beautiful-dnd --save
         npm install react-router-dom
         npm install yup @hookform/resolvers
         npm install react-hook-form
