@@ -1,0 +1,171 @@
+
+/* style={{
+                position: 'absolute',
+                // top: '50%',
+                zIndex: '12',
+                left: '20%',
+                // transform: 'translate(-50%, -50%)',
+                cursor: 'pointer',      
+                borderRadius: '2%',
+                width: '60%',
+                // height: '150px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                background: 'white',
+                border: 'none',
+            }} */
+
+:root{
+    --line: #01bd0a;
+    --cont: #c5cae9;
+    --light: #858685;
+    --base: #ffffff;
+    --font: #0d0c3f;
+    }
+
+.background{
+    background: rgba(1, 9, 23, 0.7);
+    position: absolute;
+    z-index: 11;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.paymentBackground{
+    background: rgba(1, 9, 23, 0.7);
+    position: absolute;
+    z-index: 11;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 21px;
+    top: 0px;
+}
+.modalContainer{
+    position: absolute;
+    /* top: 0%; */
+    z-index: 12;
+    top: 15%;
+    left: 25%;
+    /* transform: translate(-50%, -50%); */
+    cursor: pointer;
+    border-radius: 22px;
+    width: 50%;
+    /* height: auto; */
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    border: none;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+}
+
+/* .orderDetailsContainer{
+    position: relative;
+    padding: 2%;
+    left: 30%;
+    border-radius: 22px;
+    width: auto;
+    max-width: fit-content;
+    height: auto;
+    margin-left: 5%;
+    background: white;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+} */
+
+/* table Overview header*/
+.modalContainer .TableH1{
+    font-size: 3vw;
+    color: var(--font);
+    margin-left: 5%;
+}
+
+/* order details Header */
+.modalContainer .orderH1{
+    font-size: 2.1vw;
+    color: var(--font);
+    margin-left: 5%;
+}
+
+/* order Details */
+.modalContainer .orderDetails{
+    font-size: 1.9vw;
+    position: relative;
+    margin-left: 5%;
+}
+
+.modalContainer .total{
+    font-size: 1.7vw;
+    color: var(--font);
+    margin-left: 5%;
+}
+
+/* check Button under proceed */
+.checkbtn{
+    border-radius: 90%;
+    z-index: 20;
+    height: 40px;
+    width: 40px;
+    /* max-width: 100%; */
+    /* max-height: 100%; */
+    /* margin-left: 20px;
+    margin-left: 5%; */
+    margin-right: 20%;
+    margin-top: -9%;
+    padding: 4%;
+    float: right;
+}
+
+.proceedBTN{
+    font-size: 1.8vw;
+    margin-left: 5%;
+    margin-bottom: 0%;
+}
+
+/* prices */
+.food-price{
+    float: right;
+    margin-right: 20%;
+}
+
+/* total price */
+.total-price{
+float: right;
+    margin-right: 20%;
+}
+
+/* request bill sentence */
+.requestBill{
+    font-size: 1.8vw;
+    margin-left: 5%;
+    margin-bottom: 0%;
+}
+/* request assistance sentence */
+.requestAssistance{
+    font-size: 1.8vw;
+    margin-left: 5%;
+    margin-bottom: 0%;
+}
+/* confirm Payment BTN */
+.confirmBTN{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 12;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 22px;
+    width: 300px;
+    height: 100px;
+    margin: auto;
+    background: whitesmoke;
+}
+
+.confirmBTN:hover{
+    color: white;
+    background: rgb(253, 134, 78);
+}

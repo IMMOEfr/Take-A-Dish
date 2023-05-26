@@ -1,0 +1,320 @@
+.containerALL {
+  /* background-position: contain;
+  object-fit: contain; */
+  /* min-width: 700px; */
+  padding: 10px;
+}
+
+.cart-bold {
+  display: block;
+  color: black;
+  font-size: 45px;
+  font-weight: bolder;
+  margin-top: 20px;
+  margin-left: 75px;
+  margin-bottom: -25px;
+}
+
+.leftSideOfScreen {
+  width: 50%;
+  float: left;
+  padding: 20px;
+  /* max-width: 975px;
+  min-width: 975px; */
+  display: grid;
+}
+.cardContainer {
+  overflow-y:scroll;
+  max-height: 70vh;
+
+}
+
+.cardComponent {
+  display: flex;
+  background-color: white;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.left-side {
+  /* display: inline-block;
+  justify-content: center;
+  padding-left: 25px;
+  padding-top: 10px;
+  width: auto; */
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.p{
+  display: inline-block;
+}
+
+.food-details {
+  /* position: fixed; */
+  /* width: 250px; */
+  display: inline-grid;
+  grid-template-columns: 50px 1fr;
+  column-width: 10px;
+  height: 50px;
+  padding-top: 10px;
+}
+
+.iconFood {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-left: 20px;
+  border-radius: 20px;
+}
+
+.food-display-info {
+  display: inline-block;
+  font-size: larger;
+  width: 300px;
+  padding-left: 100px;
+}
+
+.right-side {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  flex:1;
+  
+}
+.test{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green; 
+}
+.plus-minus {
+  position: relative;
+  display: flex;
+  color: black;
+  background-color: red;
+  width: 50px;
+  /* margin-left: 625px; */
+  /* margin-bottom: 500px; */
+  /* align-items: center; */
+  bottom: 70px;
+  /* margin-top: 10px; */
+  /* display: flex; */
+}
+
+.minus {
+  margin-right: 20px;
+  background-color: red;
+  border-color: whitesmoke;
+}
+
+.cart-quantity {
+  padding-right: 40px;
+  background-color: red;
+  color: black;
+  padding-left: 20px;
+}
+
+.plus {
+  /* margin-right: 20px; */
+  background-color: red;
+  border-color: whitesmoke;
+}
+
+.plus:hover,
+.minus:hover {
+  cursor: pointer;
+  background-color: rgb(253, 112, 112);
+  transition: 0.50s;
+}
+  
+.rightScreen {
+  width: 40%;
+  float: right;
+  padding: 20px;
+  /* max-height: 50%; */
+}
+.rightScreen .rightSide {
+  background-color: white;
+  max-height: 60vh;
+  border-radius: 50px;
+  /* position: absolute;
+  height: 450px;
+  width: 40rem;
+  background-color: white;
+  right: 25px;
+  top: 100px;
+  bottom: 200px;
+  border-radius: 50px; */
+}
+
+.payment-summary-text {
+  display: block;
+  color: #0d0c3f;
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.food-info{
+  overflow: auto;
+  margin-left: 50px;
+  font-size: 15px;
+  color: black;
+  max-height: 10rem;
+}
+
+.food-name,
+.food-quantity {
+  position: relative;
+  margin-right: 10px;
+}
+
+.food-info .food-price {
+  float:right;
+  padding-right: 50px;
+}
+
+.food-total {
+  display: block;
+  color: black;
+  font-size: 20px;
+  text-align: left;
+}
+
+.total-text {
+  display: inline-block;
+  font-weight: bolder;
+  padding-left: 50px;
+  margin-right: 5%;
+  color: #0d0c3f;
+}
+
+.total-digit {
+  float: right;
+  margin-right: 24%;
+  color: #0d0c3f;
+}
+
+.submit-button {
+  display: block;
+  text-align: center;
+  padding-top: 5%;
+}
+
+.cancel-order {
+  text-shadow: -1px, -1px, 0, black;
+  color: white;
+  padding: 0px;
+  right: 300px;
+  font-size: 15px;
+  font-weight: bolder;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.cancel-word:hover {
+  color: blue;
+  cursor: pointer;
+  transition: 0.75s;
+}
+
+.place-order {
+  color: white;
+  margin-left: 25px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 15px;
+  border-radius: 50px;
+  background-color: green;
+}
+
+.place-order:hover{
+  color: green;
+  cursor: pointer;
+  background-color: white;
+  transition: 0.75s;
+}
+
+/* @media screen and (max-width: 1366px) { 
+  .plus-minus {
+    display: flex;
+    color: black;
+    background-color: red;
+    bottom: 70px;
+    right: 5rem;
+    margin-left: 550px;
+  }
+  .total-digit {
+    display: inline-block;
+    font-weight: 350;
+    margin-left: 150px;
+  }
+
+  .submit-button {
+    display: inline-block;
+    position: absolute;
+    top: 28rem;
+    right: -30px;
+    width: 30rem;
+  }
+  .rightScreen .rightSide {
+    position: absolute;
+    height: 375px;
+    width: 30rem;
+    background-color: white;
+    right: 25px;
+    top: 100px;
+    bottom: 200px;
+    border-radius: 50px;
+  }
+  .food-info{
+    overflow: auto;
+    margin-left: 50px;
+    font-size: 25px;
+    color: black;
+    max-height: 12.5rem;
+  }
+}
+
+@media screen and (max-width: 1180px) { 
+  .rightSide {
+    max-width: 25rem;
+  }
+  .plus-minus {
+    display: flex;
+    color: black;
+    background-color: red;
+    bottom: 70px;
+    right: 5rem;
+    margin-left: 450px;
+  }
+  .total-digit {
+    display: inline-block;
+    font-weight: 350;
+    margin-left: 150px;
+  }
+
+  .submit-button {
+    display: inline-block;
+    position: absolute;
+    top: 28rem;
+    right: -30px;
+    width: 30rem;
+  }
+} */

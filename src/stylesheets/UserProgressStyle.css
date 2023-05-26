@@ -1,0 +1,106 @@
+:root{
+    --line: #01bd0a;
+    --cont: #c5cae9;
+    --light: #858685;
+    --base: #ffffff;
+    --font: #0d0c3f;
+  }
+  
+  .userContainerStatus{
+    display: block;
+    margin: auto;
+    padding: 25px;
+    border-radius: 25px;
+    top: 50%;
+    height: 500px;
+    width: 50%;
+    max-width: 100%;
+    background-color: var(--base);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+  }
+  
+  .userContainerStatus .userDetails{
+    display: flex;
+    margin-top: 10%;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: var(--font);
+  }
+  
+  .userOrder h1{
+    font-size: 38px;
+    position: relative;
+    color: var(--font);
+  }
+  
+  /*check mark*/
+  .userProgress-step::before{
+    counter-increment: step;
+    content: '\2714';
+    color:aliceblue;
+    z-index: 1;
+  }
+  .userProgressbar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+  }
+  
+  /*line/bar*/
+  .userProgressbar::before, .userProgress{
+    content: " ";
+    position: absolute;
+    top: 58%;
+    transform: translateY(-50%);
+    height: 7px;
+    width: 98%;
+    background-color: #dcdcdc;
+    left: 2%;
+  }
+  
+  /*line/bar*/
+  .userProgress{
+    background-color: #01bd0a;
+    position: absolute;
+    left: 8px;  
+    /* width: 0%;   */
+    max-width: 95%;
+  }
+  
+  /*circle*/
+  .userProgress-step{
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    font-size: 15px;
+  }
+  /*icon*/
+  .userProgress-step .icon{
+    position: absolute;
+    top: calc(100% + 00.10rem); /* In chareg of tht Calculatioin fo rth progress icons */
+    width: auto;
+    height: auto;
+  }
+  /*steps , texts*/
+  .userProgress-step::after{
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 4rem);
+    color: var(--font);
+    font-weight: 4px;
+  }
+  
+  /*circle color*/
+  .userProgress-step-active{
+    background-color: #01bd0a;
+  }

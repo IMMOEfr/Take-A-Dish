@@ -1,0 +1,156 @@
+.form-title{
+    color: black;
+    font-size: 25px;
+    font-weight: bolder;
+    margin-top: 30px;
+    margin-bottom: 0px;
+  }
+  .form{
+    position: fixed;
+    overflow: hidden;
+    font-size: larger;
+    background-color: rgb(224, 224, 224);
+    height: 55%;
+    width: 30%;
+    padding-left: 100px;
+    border-radius: 50px;
+    padding-bottom: 100px;
+    padding-top: 3px;
+    padding-right: 30px;
+    top: 12%;
+    left: 30%;
+    margin:auto;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.473));
+    animation: slideInTop 0.5s;
+  }
+  .input{
+    width: 450px;
+    font-size: larger;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 25px;
+  }
+  .input:hover{
+    cursor: pointer;
+    background-color: rgb(184, 176, 176);
+  }
+  .imageWord{
+    font-size: larger;
+    padding-right: 10px;
+  }
+  .chooseFileButton {
+    font-size: large;
+    width: 250px;
+    margin-right: 25px;
+  }
+  .chooseFileButton:hover {
+    cursor: pointer;
+    transition: 0.50s;
+    background-color: white;
+  }
+  .submit {
+    font-size: large;
+    padding: 15px;
+    border-radius: 50px;
+    background-image: linear-gradient(to bottom, rgb(6, 151, 6), rgb(9, 185, 9), rgb(10, 216, 10));
+  }
+  .submit:hover {
+    color: white;
+    cursor: pointer;
+    transition: 0.50s;
+  }
+  .trash{
+    position: absolute;
+    left: 1325px;
+    top: 600px;
+  }
+  .trash:hover{
+    opacity: 75%;
+    cursor: pointer;
+    transition: 0.50s;
+  }
+  
+  @media screen and (max-width: 1920px) {
+    .form{
+      position: fixed;
+      overflow: hidden;
+      font-size: larger;
+      background-color: rgb(224, 224, 224);
+      height: 50%;
+      width: 30%;
+      padding-left: 100px;
+      border-radius: 50px;
+      padding-bottom: 100px;
+      padding-top: 3px;
+      top: 12%;
+      left: 30%;
+      margin:auto;
+      filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.473));
+      animation: slideInTop 0.5s;
+    }
+    .trash{
+      position: absolute;
+      left: 1325px;
+      top: 600px;
+    }
+  }
+  
+  @media screen and (max-width: 1366px) {
+    .form{
+      position: fixed;
+      overflow: hidden;
+      font-size: larger;
+      background-color: rgb(224, 224, 224);
+      height: 65%;
+      width: 35%;
+      padding-left: 100px;
+      border-radius: 50px;
+      padding-bottom: 100px;
+      padding-top: 3px;
+      padding-right: 50px;
+      top: 12%;
+      left: 26%;
+      margin:auto;
+      filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.473));
+      animation: slideInTop 0.5s;
+    }
+    .trash{
+      position: absolute;
+      left: 80%;
+      top: 600px;
+    }
+  }
+  
+  @media screen and (max-width: 1180px) {
+    .form{
+      position: fixed;
+      overflow: hidden;
+      font-size: larger;
+      background-color: rgb(224, 224, 224);
+      height: 60%;
+      width: 35%;
+      padding-left: 75px;
+      border-radius: 50px;
+      padding-bottom: 100px;
+      padding-top: 3px;
+      padding-right: 100px;
+      top: 12%;
+      left: 26%;
+      margin:auto;
+      filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.473));
+      animation: slideInTop 0.5s;
+    }
+    .trash{
+      position: absolute;
+      left: 80%;
+      top: 600px;
+    }
+    .submit {
+      position: absolute;
+      font-size: large;
+      padding: 15px;
+      border-radius: 50px;
+      background-image: linear-gradient(to bottom, rgb(6, 151, 6), rgb(9, 185, 9), rgb(10, 216, 10));
+      left: 75%;
+    }
+  }

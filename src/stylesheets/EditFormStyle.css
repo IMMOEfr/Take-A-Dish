@@ -1,0 +1,247 @@
+.body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  .leftGrid {
+    position: relative;
+    padding-right: 1000px;
+    left: 50px;
+    width: 350px;
+    height: 600px;
+    top: 50px;
+    margin-bottom: 50px;
+    background-color: rgb(235, 230, 230);
+    color: black;
+    font-size: xx-large;
+    border-radius: 20px;
+    display: inline-block;
+    justify-content: center;
+  }
+  
+  .leftGridWord {
+    padding-left: 25px;
+    margin-bottom: -5px;
+  }
+  
+  .inputBox {
+    font-size: 25px;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 950px;
+    margin-left: 25px;
+    margin-top: -50px;
+    overflow: hidden;
+  }
+  
+  .inputBox:hover {
+    cursor: pointer;
+    background-color: rgb(184, 176, 176);
+  }
+  
+  .error {
+    margin-top: 5px;
+    padding-left: 30px;
+    font-display: inline;
+  }
+  
+  .rightGrid {
+    position: relative;
+    left: 1450px;
+    width: 390px;
+    height: 505px;
+    top: -600px;
+    background-color: rgb(235, 230, 230);
+    color: black;
+    font-size: xx-large;
+    border-radius: 20px;
+    display: inline-block;
+    justify-content: center;
+  }
+  
+  .photo {
+    border-radius: 50px;
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin-bottom: 15px;
+  }
+  
+  .replaceImage {
+    position: relative;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 85px;
+  }
+  
+  .chooseFileButton {
+    font-size: large;
+    width: 250px;
+  }
+  
+  .chooseFileButton:hover {
+    cursor: pointer;
+    transition: 0.50s;
+    background-color: white;
+  }
+  
+  .deleteUpdate {
+    position: relative;
+    top: -575px;
+    left: 1355px;
+    bottom: -500px;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 85px;
+  }
+  
+  .delete, 
+  .update {
+    font-size: 25px;
+    margin-left: 5px;
+    border-radius: 50px;
+    padding: 20px;
+  }
+  
+  .delete {
+    background-image: linear-gradient(to bottom,rgb(255, 85, 85), rgb(233, 70, 70), rgb(206, 51, 51));
+  }
+  
+  .update {
+    background-image: linear-gradient(to bottom, rgb(6, 151, 6), rgb(9, 185, 9), rgb(10, 216, 10));
+  }
+  
+  .delete:hover, 
+  .update:hover {
+    color: white;
+    cursor: pointer;
+    transition: 0.50s;
+  }
+  
+  @media screen and (max-width: 1366px) {
+    .leftGrid {
+      position: relative;
+      padding-right: 30rem;
+      left: 50px;
+      width: 390px;
+      height: 600px;
+      top: 25px;
+      margin-bottom: 50px;
+      background-color: rgb(235, 230, 230);
+      color: black;
+      font-size: xx-large;
+      border-radius: 20px;
+      display: inline-block;
+      justify-content: center;
+    }
+    .inputBox {
+      font-size: 25px;
+      border-radius: 25px;
+      padding-left: 10px;
+      padding-right: 500px;
+      margin-left: 25px;
+      margin-top: -50px;
+      overflow: hidden;
+    }
+    .rightGrid {
+      position: relative;
+      left: 950px;
+      width: 390px;
+      height: 505px;
+      top: -625px;
+      background-color: rgb(235, 230, 230);
+      color: black;
+      font-size: xx-large;
+      border-radius: 20px;
+      display: inline-block;
+      justify-content: center;
+    }
+    .deleteUpdate {
+      position: absolute;
+      top: 625px;
+      left: 850px;
+      bottom: 0px;
+      color: black;
+      font-size: 30px;
+      font-weight: bold;
+      margin-left: 85px;
+    }
+    .delete, 
+    .update {
+      font-size: 25px;
+      margin-left: 5px;
+      border-radius: 50px;
+      padding: 25px;
+    }
+  }
+  
+  @media screen and (max-width: 1180px) {
+    .leftGrid {
+      position: relative;
+      padding-right: 20rem;
+      left: 50px;
+      width: 390px;
+      height: 600px;
+      top: 25px;
+      margin-bottom: 50px;
+      background-color: rgb(235, 230, 230);
+      color: black;
+      font-size: xx-large;
+      border-radius: 20px;
+      display: inline-block;
+      justify-content: center;
+    }
+    .inputBox {
+      font-size: 25px;
+      border-radius: 25px;
+      padding-left: 10px;
+      padding-right: 325px;
+      margin-left: 25px;
+      margin-top: -50px;
+      overflow: hidden;
+    }
+    .rightGrid {
+      position: relative;
+      left: 775px;
+      width: 390px;
+      height: 505px;
+      top: -625px;
+      background-color: rgb(235, 230, 230);
+      color: black;
+      font-size: xx-large;
+      border-radius: 20px;
+      display: inline-block;
+      justify-content: center;
+    }
+    .deleteUpdate {
+      position: absolute;
+      top: 610px;
+      left: 685px;
+      bottom: 0px;
+      color: black;
+      font-size: 30px;
+      font-weight: bold;
+      margin-left: 85px;
+    }
+    .delete, 
+    .update {
+      font-size: 25px;
+      margin-left: 5px;
+      border-radius: 50px;
+      padding: 20px;
+    }
+  }

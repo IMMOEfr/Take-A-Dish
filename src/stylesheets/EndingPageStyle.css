@@ -1,0 +1,112 @@
+:root{
+    --line: #01bd0a;
+    --cont: #c5cae9;
+    --light: #858685;
+    --base: #ffffff;
+    --font: #0d0c3f;
+  }
+
+.endingLogo{
+    display: inline-block;
+    cursor: pointer;
+    height: 65px;
+    z-index: 10;
+    width: 100px;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 15px;
+}
+
+
+/* please enjoy your meal */
+.endingH1{
+    text-align: center;
+    font-family: "Georgia";
+    font-size: 4vmax;
+    background-image: url(https://media.giphy.com/media/UUzg0mg70j48i87NGu/giphy-downsized-large.gif);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.callWaiterBTN{
+    cursor: pointer;
+    display:block;
+    font-weight: 900;
+    color: gainsboro;
+    position: absolute;
+    top: 70%;
+    right: 40px;
+    font-size: 20px;
+    margin-top:35px;
+    height: 60px;
+    width: 100%;
+    min-width: 10px; 
+    max-width: 300px;
+    border-radius: 20px;
+    border: none;
+    background:  #130f40;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(255,255,255,0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(255,255,255,0);
+}
+
+.RequestBillBTN{
+    cursor: pointer;
+    display:block;
+    font-weight: 900;
+    color: gainsboro;
+    position: absolute;
+    top: 80%;
+    right: 40px;
+    font-size: 20px;
+    margin-top:40px;
+    height: 60px;
+    width: 100%;
+    min-width: 10px; 
+    max-width: 300px;
+    border-radius: 20px;
+    border: none;
+    background:  #130f40;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(255,255,255,0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(255,255,255,0);
+}
+
+.callWaiterBTN:hover{
+    color: #0d0c3f;
+    background: whitesmoke; 
+}
+
+.RequestBillBTN:hover{
+    color: #0d0c3f;
+    background: whitesmoke;
+}
+
+.backMenuBTN{
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 13px;
+    padding-left: 90px;
+    font-size: 20px;
+}
+.endingLogo:hover{
+    opacity: 1;
+	-webkit-animation: flash 0.5s;
+	animation: flash 0.5s;
+}
+
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}

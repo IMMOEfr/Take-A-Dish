@@ -1,0 +1,151 @@
+/* Staff Progress Style */
+/* style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                zIndex: '12',
+                transform: 'translate(-50%, -50%)',
+                cursor: 'pointer',      
+                borderRadius: '2%',
+                width: 'auto',
+                height: 'auto',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                background: 'white',
+                border: 'none',
+            }} */
+:root{
+  --line: #01bd0a;
+  --cont: #c5cae9;
+  --light: #858685;
+  --base: #ffffff;
+  --font: #0d0c3f;
+}
+.orderStatusBackground{
+  background: rgba(1, 9, 23, 0.7);
+  position: absolute;
+  z-index: 11;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 21px;
+}
+.containerStatus{
+    position: absolute;
+    padding: 8%;
+    padding-top: 0;
+    z-index: 12;
+    left: 7%;
+    border-radius: 22px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+}
+
+.containerStatus .details{
+  display: flex;
+  padding: 5px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: var(--font);
+}
+
+.order h1{
+  font-size: 30px;
+  position: relative;
+  color: var(--font);
+}
+
+/*check mark*/
+.progress-step::before{
+  counter-increment: step;
+  content: '\2714';
+  color:aliceblue;
+  z-index: 1;
+}
+.progressbar{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+}
+
+/*line/bar*/
+.progressbar::before, .progress{
+  content: " ";
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  height: 3px;
+  width: 98%;
+  background-color: #dcdcdc;
+  left: 2%;
+}
+
+/*line/bar*/
+.progress{
+  background-color: #01bd0a;
+  position: absolute;
+  left: 8px;  
+  max-width: 95%;
+}
+
+/*circle*/
+.progress-step{
+  padding: 1px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-size: 9px;
+}
+/*icon*/
+.progress-step .icon{
+  position: absolute;
+  top: calc(100% + 00.10rem); /* In charge of the Calculation of the progress icons */
+  width: auto;
+  height: auto;
+}
+/*steps , texts*/
+.progress-step::after{
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 4rem);
+  color: var(--font);
+  font-size: 1.1vw;
+}
+
+/*circle color*/
+.progress-step-active{
+  background-color: #01bd0a;
+}
+
+/*staff button placeholder*/
+.staffBTN-proceed{
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    height: 70px;
+    width: 130px;
+    margin-left: 37%;
+    margin-top: 30%;
+    background: var(--line);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+ 
+}
+
+.staffBTN-proceed:hover{
+  color: #01bd0a;
+  background-color: white;
+  filter: drop-shadow(0 0 0.4em #01bd0a);
+}
