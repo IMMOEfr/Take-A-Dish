@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.54d81508.css",
+    "main.js": "/static/js/main.82ef0347.js",
+    "static/media/all.png": "/static/media/all.774ff82490e6f443869f.png",
+    "static/media/appetizers.png": "/static/media/appetizers.fa062244eb8c17de76a1.png",
+    "static/media/beverages.png": "/static/media/beverages.8511db1d966a6588835d.png",
+    "static/media/deny.png": "/static/media/deny.3d62f64f00720a99c084.png",
+    "static/media/back-button.png": "/static/media/back-button.04f72295647089bec262.png",
+    "static/media/tablebutton.png": "/static/media/tablebutton.12842e65005d55530c3d.png",
+    "static/media/table-notif.png": "/static/media/table-notif.1d3999d759409b5ca9c4.png",
+    "static/media/unsync.png": "/static/media/unsync.e2ef93cd5298aa648c97.png",
+    "static/media/insync.png": "/static/media/insync.0c719b09bf2b53d5a2db.png",
+    "static/media/inactiveTable.png": "/static/media/inactiveTable.f1a71a7b74f451aab95b.png",
+    "static/media/Logo.png": "/static/media/Logo.8ef8e1e85d2376927df9.png",
+    "static/media/sync.png": "/static/media/sync.d52c89c8021c225eb8c5.png",
+    "static/media/desserts.png": "/static/media/desserts.d598537f29a5adaf0043.png",
+    "static/media/burgers.png": "/static/media/burgers.d7a693e597d579478227.png",
+    "static/media/admintable.png": "/static/media/admintable.dee0464e6a745149d97c.png",
+    "static/media/noodles.png": "/static/media/noodles.f35ffc554565f54cdd75.png",
+    "static/media/trash.png": "/static/media/trash.4530d6bb2667938a9c9b.png",
+    "static/media/login.png": "/static/media/login.88fb8fd7e5be92b64b40.png",
+    "index.html": "/index.html",
+    "main.54d81508.css.map": "/static/css/main.54d81508.css.map",
+    "main.82ef0347.js.map": "/static/js/main.82ef0347.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.54d81508.css",
+    "static/js/main.82ef0347.js"
+  ]
+}
